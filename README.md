@@ -30,6 +30,7 @@ conda install -c conda-forge r-base -y
 conda install -c conda-forge r-devtools -y
 conda install -c conda-forge r-ggplot2 -y
 conda install -c conda-forge r-ggpubr -y
+conda install -c conda-forge r-data.table -y
 ```
 
 Call R from the narrowsUtil conda environemnt
