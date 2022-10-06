@@ -21,5 +21,6 @@ JOBCOMMAND
     gsub(pattern = JOBCOMMAND, replacement = command)
 
   write(bash_template, file = paste0(job_name, ".sh"), append = FALSE)
+  system(paste0("module load slurm; sbatch ", paste0(job_name, ".sh")))
 
 }
