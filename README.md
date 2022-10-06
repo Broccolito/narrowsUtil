@@ -43,6 +43,6 @@ R
 Install the narrowsUtil R package within R
 
 ```R
-devtools::install_github("Broccolito/narrowsUtil")
+devtools::install_github("Broccolito/narrowsUtil", upgrade = "never")
 ```
 

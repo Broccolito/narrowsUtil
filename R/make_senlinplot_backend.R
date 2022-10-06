@@ -203,16 +203,6 @@ make_senlinplot_backend = function(par_path,
                       )
     )
 
-    if(use_user_theme){
-
-      if(is.na(user_theme)){
-        cat("No user theme supplied - use default theme...\n")
-      }else{
-        tm = user_theme
-      }
-
-    }
-
     plt = forest(data = select(d, Study, Effect, `P-value`, `95% CI`, N, ` `),
                  est = d$Effect,
                  lower = d$c95_lower,
