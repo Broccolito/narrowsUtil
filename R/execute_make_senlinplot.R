@@ -6,6 +6,7 @@ execute_make_senlinplot(par_file = "parfile_path.par",
                         use_user_theme = FALSE,
                         user_theme = NA){
 
+  pwd = getwd()
   r_filename = "make_senlinplot_runner.R"
   bash_filename = "make_senlinplot_runner.sh"
 
@@ -63,7 +64,7 @@ make_senlinplot_backend(senlinplot_stats_path = stats_filename,
                             execution_tempalte)
 
   bash_template = gsub(pattern = "R_FILE",
-                       replacement = r_filename,
+                       replacement = paste0(pwd, "/", r_filename),
                        bash_template)
 
   write(bash_template, file = bash_filename, append = FALSE)
