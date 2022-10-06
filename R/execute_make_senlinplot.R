@@ -1,11 +1,9 @@
 #' @export
 execute_make_senlinplot = function(par_file = "parfile_path.par",
-                        meta_file = "metal_output.txt",
-                        snp_name = "6:160985526:G:A",
-                        stats_filename = "forestplot_stats.csv",
-                        senlinplot_filename = "senlinplot.png",
-                        use_user_theme = FALSE,
-                        user_theme = NA){
+                                   meta_file = "metal_output.txt",
+                                   snp_name = "6:160985526:G:A",
+                                   stats_filename = "forestplot_stats.csv",
+                                   senlinplot_filename = "senlinplot.png"){
 
   pwd = getwd()
   r_filename = "make_senlinplot_runner.R"
@@ -37,10 +35,11 @@ Rscript R_FILE
 '
 
   r_template = 'library(narrowsUtil)
-make_senlinplot_backend(senlinplot_stats_path = stats_filename,
-                        senlinplot_filename = senlinplot_filename,
-                        use_user_theme = use_user_theme,
-                        user_theme = user_theme)
+make_senlinplot_backend(par_path = PAR_PATH,
+                        outfile_path = OUTFILE_PATH,
+                        snp_name = SNP_NAME,
+                        senlinplot_stats_path = SENLINPLOT_STATS_PATH,
+                        senlinplot_filename = SENLINPLOT_FILENAME)
 '
 
   execution_tempalte = gsub(pattern = "BASH_FILE",
@@ -50,6 +49,14 @@ make_senlinplot_backend(senlinplot_stats_path = stats_filename,
   bash_template = gsub(pattern = "R_FILE",
                        replacement = paste0(pwd, "/", r_filename),
                        bash_template)
+
+  r_template = gsub(pattern = "PAR_PATH",
+                    replacement = par_file, r_template) %>%
+    gsub(pattern = "OUTFILE_PATH",
+         replacement = meta_file) %>%
+    gsub(pattern = "SNP_NAME", replacement = snp_name) %>%
+    gsub(pattern = "SENLINPLOT_STATS_PATH", replacement = stats_filename) %>%
+    gsub(pattern = "SENLINPLOT_FILENAME", replacement = senlinplot_filename)
 
   write(bash_template, file = bash_filename, append = FALSE)
   write(r_template, file = r_filename, append = FALSE)
