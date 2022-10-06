@@ -35,11 +35,11 @@ Rscript R_FILE
 '
 
   r_template = 'library(narrowsUtil)
-make_senlinplot_backend(par_path = PAR_PATH,
-                        outfile_path = OUTFILE_PATH,
-                        snp_name = SNP_NAME,
-                        senlinplot_stats_path = SENLINPLOT_STATS_PATH,
-                        senlinplot_filename = SENLINPLOT_FILENAME)
+make_senlinplot_backend(par_path = "PAR_PATH",
+                        outfile_path = "OUTFILE_PATH",
+                        snp_name = "SNP_NAME",
+                        senlinplot_stats_path = "SENLINPLOT_STATS_PATH",
+                        senlinplot_filename = "SENLINPLOT_FILENAME")
 '
 
   execution_tempalte = gsub(pattern = "BASH_FILE",
