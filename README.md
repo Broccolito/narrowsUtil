@@ -34,15 +34,15 @@ conda install -c conda-forge r-ggpubr -y
 conda install -c conda-forge r-data.table -y
 ```
 
-Call R from the narrowsUtil conda environemnt
 
-```bash
-R
-```
 
-Install the narrowsUtil R package within R
+## Usage
 
-```R
-devtools::install_github("Broccolito/narrowsUtil", upgrade = "never")
-```
+#### Merge SAIGE output
+
+
+
+
+
+
 
