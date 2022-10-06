@@ -1,14 +1,12 @@
 #' @export
-execute_make_senlinplot = function(par_file = "parfile_path.par",
-                                   meta_file = "metal_output.txt",
-                                   snp_name = "6:160985526:G:A",
-                                   stats_filename = "forestplot_stats.csv",
-                                   senlinplot_filename = "senlinplot.png",
-                                   r_filename = "make_senlinplot_runner.R",
-                                   bash_filename = "make_senlinplot_runner.sh",
-                                   job_name = "make_senlinplot",
-                                   n_cores = 4,
-                                   memory_per_core = 16){
+execute_merge_saige = function(autosomal_pattern = "FHS_EA_MRS_chrXXX.txt",
+                               autosomal_only = FALSE,
+                               chrx_filename = "FHS_EA_MRS_plink2_run_chrX.txt",
+                               r_filename = "make_senlinplot_runner.R",
+                               bash_filename = "merge_saige_runner.sh",
+                               job_name = "merge_saige",
+                               n_cores = 4,
+                               memory_per_core = 16){
 
   pwd = getwd()
 
@@ -38,11 +36,10 @@ Rscript R_FILE
 '
 
   r_template = 'library(narrowsUtil)
-make_senlinplot_backend(par_path = "PAR_PATH",
-                        outfile_path = "OUTFILE_PATH",
-                        snp_name = "SNP_NAME",
-                        senlinplot_stats_path = "SENLINPLOT_STATS_PATH",
-                        senlinplot_filename = "SENLINPLOT_FILENAME")
+merge_saige_backend(autosomal_pattern = AUTOSOMAL_PATTERN,
+                    autosomal_only = AUTOSOMAL_ONLY,
+                    chrx_filename = CHRX_FILENAME,
+                    write_file = TRUE)
 '
 
   execution_tempalte = gsub(pattern = "BASH_FILE",
@@ -56,11 +53,9 @@ make_senlinplot_backend(par_path = "PAR_PATH",
     gsub(pattern = "NCORES", replacement = n_cores) %>%
     gsub(pattern = "JOBNAME", replacement = job_name)
 
-  r_template = gsub(pattern = "PAR_PATH", replacement = par_file, r_template) %>%
-    gsub(pattern = "OUTFILE_PATH", replacement = meta_file) %>%
-    gsub(pattern = "SNP_NAME", replacement = snp_name) %>%
-    gsub(pattern = "SENLINPLOT_STATS_PATH", replacement = stats_filename) %>%
-    gsub(pattern = "SENLINPLOT_FILENAME", replacement = senlinplot_filename)
+  r_template = gsub(pattern = "AUTOSOMAL_PATTERN", replacement = autosomal_pattern, r_template) %>%
+    gsub(pattern = "AUTOSOMAL_ONLY", replacement = autosomal_only) %>%
+    gsub(pattern = "CHRX_FILENAME", replacement = chrx_filename)
 
   write(bash_template, file = bash_filename, append = FALSE)
   write(r_template, file = r_filename, append = FALSE)

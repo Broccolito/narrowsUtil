@@ -172,7 +172,7 @@ make_senlinplot_backend = function(par_path,
                              senlinplot_filename = "senlinplot.png"){
 
     d = read.csv(senlinplot_stats_path)
-    d$study_name = strsplit(d$path, split = "[/]") %>%
+    d$study_name = strsplit(d$study, split = "[/]") %>%
       lapply(function(x){
         x[length(x)]
       }) %>%

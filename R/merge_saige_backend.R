@@ -1,8 +1,8 @@
 #' @export
 merge_saige_backend = function(autosomal_pattern = "FHS_EA_MRS_chrXXX.txt",
-                       chrx_filename = "FHS_EA_MRS_plink2_run_chrX.txt",
-                       autosomal_only = FALSE,
-                       write_file = TRUE){
+                               autosomal_only = FALSE,
+                               chrx_filename = "FHS_EA_MRS_plink2_run_chrX.txt",
+                               write_file = TRUE){
 
   file_list = sapply(1:22, function(x){
     gsub(pattern = "XXX", replacement = x, autosomal_pattern)

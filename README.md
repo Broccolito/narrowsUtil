@@ -24,9 +24,10 @@ conda activate narrowsUtil
 # Update the conda environment
 conda update --all
 
-# Install R packages needed for narrowsUtil
+# Install R packages and other dependencies needed for narrowsUtil
 conda install -c conda-forge python=3.10 -y
 conda install -c conda-forge r-base -y
+conda install -c anaconda cmake -y
 conda install -c conda-forge r-devtools -y
 conda install -c conda-forge r-ggplot2 -y
 conda install -c conda-forge r-ggpubr -y
