@@ -1,3 +1,4 @@
+#' @export
 process_parfile = function(par_path = "parfile_path.par",
                            outfile_path = "metal_output.txt"){
 

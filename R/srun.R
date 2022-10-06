@@ -1,3 +1,4 @@
+#' @export
 srun = function(command, job_name = "runner",
                 n_cores = 4,
                 memory_per_core = 8){

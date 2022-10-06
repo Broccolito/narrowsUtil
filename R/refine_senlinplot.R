@@ -1,3 +1,4 @@
+#' @export
 refine_senlinplot = function(senlinplot_stats_path = "forestplot_stats.csv",
                              senlinplot_filename = "senlinplot.png",
                              use_user_theme = FALSE,

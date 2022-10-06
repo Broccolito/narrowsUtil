@@ -1,3 +1,4 @@
+#' @export
 merge_saige_backend = function(autosomal_pattern = "FHS_EA_MRS_chrXXX.txt",
                        chrx_filename = "FHS_EA_MRS_plink2_run_chrX.txt",
                        autosomal_only = FALSE,

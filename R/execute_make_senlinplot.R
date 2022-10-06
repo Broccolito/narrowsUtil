@@ -1,3 +1,4 @@
+#' @export
 execute_make_senlinplot = function(par_file = "parfile_path.par",
                         meta_file = "metal_output.txt",
                         snp_name = "6:160985526:G:A",
