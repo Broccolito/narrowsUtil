@@ -42,6 +42,18 @@ conda install -c conda-forge r-data.table -y
 
 
 
+#### Annotate GWAS summary statistics
+
+
+
+#### Make Manhattan plot and Q-Q plot
+
+
+
+#### Make Forestplot
+
+
+
 
 
 
