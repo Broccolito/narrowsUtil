@@ -9,12 +9,12 @@ execute_make_senlinplot = function(par_file = "parfile_path.par",
   r_filename = "make_senlinplot_runner.R"
   bash_filename = "make_senlinplot_runner.sh"
 
-  if(file.exists(r_filename)){
+  while(file.exists(r_filename)){
     r_filename = gsub(pattern = ".R", replacement = "", r_filename)
     r_filename = paste0(r_filename, "_REDO.R")
   }
 
-  if(file.exists(bash_filename)){
+  while(file.exists(bash_filename)){
     bash_filename = gsub(pattern = ".sh", replacement = "", bash_filename)
     bash_filename = paste0(bash_filename, "_REDO.sh")
   }
