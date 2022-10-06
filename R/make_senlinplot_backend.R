@@ -178,7 +178,7 @@ make_senlinplot_backend = function(par_path,
       }) %>%
       unlist()
     d = d %>%
-      select(path, study_name, marker, effect, se, pvalue,
+      select(study_name, marker, effect, se, pvalue,
              c95_lower, c95_upper, n) %>%
       filter(!is.na(effect)) %>%
       mutate(effect = signif(effect, 3)) %>%
@@ -187,7 +187,7 @@ make_senlinplot_backend = function(par_path,
       mutate(c95_upper = round(c95_upper, 2)) %>%
       mutate(ci = paste0(effect," (", c95_lower, ", ", c95_upper, ")"))
 
-    names(d) = c("path", "Study", "marker", "Effect", "se", "P-value",
+    names(d) = c("Study", "marker", "Effect", "se", "P-value",
                  "c95_lower","c95_upper", "N", "95% CI")
 
     d$` ` = paste(rep(" ", 20), collapse = " ")
@@ -219,7 +219,7 @@ make_senlinplot_backend = function(par_path,
                  upper = d$c95_upper,
                  ci_column = 6,
                  is_summary = c(rep(FALSE, dim(d)[1]-1), TRUE),
-                 footnote = paste0("\n", d$marker[1]),
+                 footnote = paste0("\n    ", d$marker[1]),
                  theme = tm); plt
 
     p_wh = get_wh(plot = plt, unit = "in")
