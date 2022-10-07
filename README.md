@@ -52,6 +52,22 @@ conda install -c conda-forge r-data.table -y
 
 #### Make Forestplot
 
+```bash
+# Arguments
+Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
+	[Args1 METAL Parameter File] \
+	[Args2 Meta Analysis Result] \
+	[Args3 SNPID] \
+	[Args4 plot and stats name suffix]
+
+# Example
+Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
+  /salemlab/users/wagu/hapo/minimal_model/meta_analysis.par \
+  /salemlab/users/wagu/hapo/minimal_model/HAPO_BINARY_META1.txt \
+  6:150541053:G:T \
+  forestplot_test
+```
+
 
 
 

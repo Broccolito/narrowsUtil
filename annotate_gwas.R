@@ -152,9 +152,16 @@ annotate_data = function(data, file_name = "data_annotated.xlsx"){
 
 args = commandArgs(trailingOnly=TRUE)
 
-if(length(args) == 2){
-  data = load_data(file_name = as.character(args[1]))
-  annotate_data(data, args[2])
+if(length(args) %in% c(2, 4)){
+  if(length(args) == 2){
+    data = load_data(file_name = as.character(args[1]))
+    annotate_data(data, args[2])
+  }else{
+    data = load_data(file_name = as.character(args[1]), 
+                     marker_name_column = as.character(args[3]),
+                     pvalue_column = as.character(args[4]))
+    annotate_data(data, args[2])
+  }
 }else{
   cat("Incorrest number of arguments supplied..\n")
 }
