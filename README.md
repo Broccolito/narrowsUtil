@@ -40,15 +40,44 @@ conda install -c conda-forge r-data.table -y
 
 #### Merge SAIGE output
 
+```bash
+# Merge chromosomal summary stats
+Rscript /salemlab/users/wagu/narrowsUtil/merge_saige.R \
+	HAPO_AS_increment_chrXXX.txt TRUE
+	
+# With chrX results
+Rscript /salemlab/users/wagu/narrowsUtil/merge_saige.R \
+	HAPO_AS_increment_chrXXX.txt TRUE \
+	HAPO_AS_increment_plink2_run_chrX.txt TRUE
+```
 
+#### Clumping
+
+```bash
+# Clumping the GWAS signals to SAS
+bash /salemlab/REF/SOFTWARE/SHCode/Filter_and_Clump_GWAS_v1.sh \
+  HAPO_AS_increment_chr_MERGED.txt \
+  P_gc SNPID SAS \
+  HAPO_AS_increment_CLUMPED
+```
 
 #### Annotate GWAS summary statistics
 
-
+```bash
+# Example
+Rscript /salemlab/users/wagu/narrowsUtil/annotate_gwas.R \
+  HAPO_MA_increment_CLUMPED_1e5_snplist.txt \
+  HAPO_MA_increment_annotated.xlsx
+```
 
 #### Make Manhattan plot and Q-Q plot
 
-
+```bash
+# Example
+Rscript /salemlab/users/wagu/narrowsUtil/make_manhqq_plot.R \
+  HAPO_AS_increment_chr_MERGED.txt \
+  HAPO_AS_increment
+```
 
 #### Make Forestplot
 
@@ -70,7 +99,23 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
 
 
 
+### Specifying Cluster Parameter
 
+```bash
+#! /bin/bash
+#SBATCH --mem-per-cpu=16G
+#SBATCH --cpus-per-task=4
+#SBATCH --ntasks=1
+#SBATCH -t 7-00:00
+#SBATCH --job-name  HAPO_INCREMENT_RUNNER
+#SBATCH --output=HAPO_INCREMENT_RUNNER.out
+#SBATCH --partition=salem-compute
+
+# Activate conda environment
+conda activate wanjunR
+
+### ADD MORE CODE HERE
+```
 
 
 

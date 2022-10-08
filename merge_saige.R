@@ -123,13 +123,13 @@ args = commandArgs(trailingOnly=TRUE)
 
 if(length(args) %in% c(2, 4)){
   if(length(args) == 2){
-    merge_saige(as.character(args_vec[1]),
-                as.logical(args_vec[2]))
+    merge_saige(as.character(args[1]),
+                as.logical(args[2]))
   }else{
-    merge_saige(as.character(args_vec[1]),
-                as.logical(args_vec[2]),
-                as.character(args_vec[3]),
-                as.logical(args_vec[4]))
+    merge_saige(as.character(args[1]),
+                as.logical(args[2]),
+                as.character(args[3]),
+                as.logical(args[4]))
   }
 }else{
   cat("Incorrest number of arguments supplied..\n")
