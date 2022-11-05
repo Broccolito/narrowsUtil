@@ -28,9 +28,8 @@ if(!require("forestploter")){
   library("forestploter")
 }
 
-
-make_senlinplot = function(senlinplot_stats_path = "forestplot_stats.csv",
-                           senlinplot_filename = "senlinplot.png"){
+make_senlin_plot_from_stats = function(senlinplot_stats_path = "forestplot_stats.csv",
+                                       senlinplot_filename = "senlinplot.png"){
   
   d = read.csv(senlinplot_stats_path)
   d$study_name = strsplit(d$study, split = "[/]") %>%
@@ -86,8 +85,11 @@ args = commandArgs(trailingOnly=TRUE)
 
 if(length(args) == 2){
   
-  make_senlinplot(senlinplot_stats_path = stats_filename,
-                  senlinplot_filename = plot_name)
+  stats_filename = as.character(args[1])
+  plot_name = as.character(args[2])
+  
+  make_senlin_plot_from_stats(senlinplot_stats_path = stats_filename,
+                              senlinplot_filename = plot_name)
   
   if(file.exists("Rplots.pdf")){
     file.remove("Rplots.pdf")
