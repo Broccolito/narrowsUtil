@@ -97,6 +97,19 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
   forestplot_test
 ```
 
+#### Make Forestplot from customized stats sheet
+
+```R
+Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot_from_stats.R \
+	[Args1 senlin plot parameter file] \
+	[Args2 plot name]
+
+# Example
+Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
+	/salemlab/users/wagu/narrowsUtil/forestplot_test_forestplot_stats.csv \
+	example_plot.png
+```
+
 
 
 ### Specifying Cluster Parameter
