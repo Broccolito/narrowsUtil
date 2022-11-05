@@ -110,6 +110,22 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
 	example_plot.png
 ```
 
+#### Make Crosstrait Forestplot
+
+```r
+# Arguments
+Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
+	[Args1 METAL Parameter File] \
+	[Args3 SNPID] \
+	[Args4 plot and stats name suffix]
+
+# Example
+Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
+  /salemlab/users/wagu/hapo/minimal_model/meta_analysis.par \
+  6:150541053:G:T \
+  forestplot_test
+```
+
 
 
 ### Specifying Cluster Parameter
