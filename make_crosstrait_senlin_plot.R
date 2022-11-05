@@ -28,8 +28,7 @@ if(!require("forestploter")){
   library("forestploter")
 }
 
-process_parfile = function(par_path = "parfile_path.par",
-                           outfile_path = "metal_output.txt"){
+process_parfile = function(par_path = "parfile_path.par"){
   
   par_file = readLines(par_path)
   gwasfile = par_file[grepl(pattern = "PROCESS /", par_file)] %>%
@@ -37,7 +36,6 @@ process_parfile = function(par_path = "parfile_path.par",
   
   par = list()
   par[["gwasfile"]] = gwasfile
-  par[["outfile"]] = outfile_path
   
   return(par)
 }
