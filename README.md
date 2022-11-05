@@ -114,13 +114,13 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
 
 ```r
 # Arguments
-Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
+Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot.R \
 	[Args1 METAL Parameter File] \
 	[Args3 SNPID] \
 	[Args4 plot and stats name suffix]
 
 # Example
-Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
+Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot.R \
   /salemlab/users/wagu/hapo/minimal_model/meta_analysis.par \
   6:150541053:G:T \
   forestplot_test
