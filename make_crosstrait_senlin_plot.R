@@ -95,8 +95,7 @@ get_senlinplot_stats = function(par_path = "parfile_path.par",
                                 filename = "forestplot_stats.csv",
                                 gwas_snp_name = "6:160985526:G:A"){
   
-  par = process_parfile(par_path = par_path,
-                        outfile_path = outfile_path)
+  par = process_parfile(par_path = par_path)
   
   gwas_paths = as.list(par[["gwasfile"]])
   gwas_stats = map(gwas_paths, get_marker_stats) %>%
