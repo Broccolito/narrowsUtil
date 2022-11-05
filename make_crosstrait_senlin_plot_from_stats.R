@@ -29,7 +29,7 @@ if(!require("forestploter")){
 }
 
 make_crosstrait_senlin_plot_from_stats = function(senlinplot_stats_path = "forestplot_stats.csv",
-                                       senlinplot_filename = "senlinplot.png"){
+                                                  senlinplot_filename = "senlinplot.png"){
   
   d = read.csv(senlinplot_stats_path)
   d$study_name = strsplit(d$study, split = "[/]") %>%
@@ -88,7 +88,7 @@ if(length(args) == 2){
   plot_name = as.character(args[2])
   
   make_crosstrait_senlin_plot_from_stats(senlinplot_stats_path = stats_filename,
-                              senlinplot_filename = plot_name)
+                                         senlinplot_filename = plot_name)
   
   if(file.exists("Rplots.pdf")){
     file.remove("Rplots.pdf")
