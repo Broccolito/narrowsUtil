@@ -105,7 +105,7 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot_from_stats.R \
 	[Args2 plot name]
 
 # Example
-Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
+Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot_from_stats.R \
 	/salemlab/users/wagu/narrowsUtil/forestplot_test_forestplot_stats.csv \
 	example_plot.png
 ```
@@ -125,6 +125,23 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot.R \
   6:150541053:G:T \
   forestplot_test
 ```
+
+
+
+#### Make Crosstrait Forestplot from customized stats sheet
+
+```r
+Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot_from_stats.R \
+	[Args1 senlin plot parameter file] \
+	[Args2 plot name]
+
+# Example
+Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot_from_stats.R \
+	/salemlab/users/wagu/narrowsUtil/forestplot_test_forestplot_stats.csv \
+	example_plot.png
+```
+
+
 
 
 

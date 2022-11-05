@@ -42,16 +42,16 @@ process_parfile = function(par_path = "parfile_path.par"){
 
 get_marker_stats = function(gwas_path, snp_name = "6:160985526:G:A"){
   
-  identifier_column_name = "1KG_ID"
-  effectsize_column_name = "BETA"
-  stderr_column_name = "SE"
-  pvalue_column_name = "p.value"
+  identifier_column_name = "MarkerName"
+  effectsize_column_name = "Effect"
+  stderr_column_name = "StdErr"
+  pvalue_column_name = "P-value"
   samplesize_column_name = "N"
   check_inverse_ref = TRUE
   
   cat(paste0("Read GWAS Summary Statistics from ", gwas_path, "...\n"))
   d = as.data.frame(fread(gwas_path))
-  d_snp = d[d[["1KG_ID"]] == snp_name,]
+  d_snp = d[d[[identifier_column_name]] == snp_name,]
   
   used_inverse = FALSE
   if(check_inverse_ref){
