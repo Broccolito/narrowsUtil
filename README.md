@@ -167,7 +167,9 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot_from_stats.
 # Activate conda environment
 conda activate narrowsUtil
 
-Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R testsenlin.par /salemlab/dbGaP/users/e6richar/jupyter/GWAS_FILES/CHD/CHD_TE_SUMSTAT_META_011022_study2_META1.txt 6:150541053:G:T forestplot_test
+Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R testsenlin.par \ /salemlab/dbGaP/users/e6richar/jupyter/GWAS_FILES/CHD/CHD_TE_SUMSTAT_META_011022_study2_META1.txt \
+6:150541053:G:T \
+forestplot_test
 
 
 
