@@ -92,7 +92,7 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
 # Example
 Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
   /salemlab/users/m1ma/forestPlot/testsenlin.par \
-  /salemlab/users/wagu/hapo/minimal_model/HAPO_BINARY_META1.txt \
+  /salemlab/dbGaP/users/e6richar/jupyter/GWAS_FILES/CHD/CHD_TE_SUMSTAT_META_011022_study2_META1.txt \
   6:150541053:G:T \
   forestplot_test
 ```
@@ -105,6 +105,8 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot_from_stats.R \
 	[Args2 plot name]
 
 # Example
+# Need to do the commands for the last part first and edit the csv file generated
+# Need to check output file name from last part to be arguments for following step
 Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot_from_stats.R \
 	/salemlab/users/wagu/narrowsUtil/forestplot_test_forestplot_stats.csv \
 	example_plot.png
@@ -136,6 +138,7 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot_from_stats.
 	[Args2 plot name]
 
 # Example
+# Need to do the commands for the last part first and edit the csv file generated
 # Need to check output file name from last part to be arguments for following step
 Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot_from_stats.R \
 	/salemlab/users/wagu/narrowsUtil/crosstraitplot_test_forestplot_stats.csv \
@@ -161,7 +164,7 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot_from_stats.
 # Activate conda environment
 conda activate narrowsUtil
 
-Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R testsenlin.par /salemlab/users/wagu/toy_meta/HAPO_BINARY_META1.txt 6:150541053:G:T forestplot_test
+Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R testsenlin.par /salemlab/dbGaP/users/e6richar/jupyter/GWAS_FILES/CHD/CHD_TE_SUMSTAT_META_011022_study2_META1.txt 6:150541053:G:T forestplot_test
 
 
 
