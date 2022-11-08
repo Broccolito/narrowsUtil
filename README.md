@@ -91,7 +91,7 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
 
 # Example
 Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
-  /salemlab/users/wagu/hapo/minimal_model/meta_analysis.par \
+  /salemlab/users/m1ma/forestPlot/testsenlin.par \
   /salemlab/users/wagu/hapo/minimal_model/HAPO_BINARY_META1.txt \
   6:150541053:G:T \
   forestplot_test
@@ -121,9 +121,9 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot.R \
 
 # Example
 Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot.R \
-  /salemlab/users/wagu/hapo/minimal_model/meta_analysis.par \
+  /salemlab/users/m1ma/forestPlot/testcross.par \
   6:150541053:G:T \
-  forestplot_test
+  crosstraitplot_test
 ```
 
 
@@ -136,8 +136,9 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot_from_stats.
 	[Args2 plot name]
 
 # Example
+# Need to check output file name from last part to be arguments for following step
 Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot_from_stats.R \
-	/salemlab/users/wagu/narrowsUtil/forestplot_test_forestplot_stats.csv \
+	/salemlab/users/wagu/narrowsUtil/crosstraitplot_test_forestplot_stats.csv \
 	example_plot.png
 ```
 
@@ -158,10 +159,9 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot_from_stats.
 #SBATCH --partition=salem-compute
 
 # Activate conda environment
-conda activate wanjunR
+conda activate narrowsUtil
 
-### ADD MORE CODE HERE
-```
+Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R testsenlin.par /salemlab/users/wagu/toy_meta/HAPO_BINARY_META1.txt 6:150541053:G:T forestplot_test
 
 
 
