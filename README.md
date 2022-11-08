@@ -96,6 +96,8 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot.R \
   6:150541053:G:T \
   forestplot_test
 ```
+![forestplot_test_forestplot](https://user-images.githubusercontent.com/97704603/200648647-7e7f8d78-2535-4ed4-8462-e221a4755bac.png)
+
 
 #### Make Forestplot from customized stats sheet
 
@@ -111,6 +113,7 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_senlin_plot_from_stats.R \
 	/salemlab/users/wagu/narrowsUtil/forestplot_test_forestplot_stats.csv \
 	example_plot.png
 ```
+![senlintest](https://user-images.githubusercontent.com/97704603/200648846-0190d5df-8144-4587-a3c1-1afb259b79c2.png)
 
 #### Make Crosstrait Forestplot
 
@@ -127,7 +130,7 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot.R \
   6:150541053:G:T \
   crosstraitplot_test
 ```
-
+![crosstrait_crosstrait_forestplot](https://user-images.githubusercontent.com/97704603/200648738-3d4e313b-db5e-497b-876c-781da873be99.png)
 
 
 #### Make Crosstrait Forestplot from customized stats sheet
@@ -144,7 +147,7 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot_from_stats.
 	/salemlab/users/wagu/narrowsUtil/crosstraitplot_test_forestplot_stats.csv \
 	example_plot.png
 ```
-
+![newCross](https://user-images.githubusercontent.com/97704603/200648697-f09a0f06-a5ca-432c-aacd-4d6b92cc5796.png)
 
 
 
