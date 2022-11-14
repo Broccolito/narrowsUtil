@@ -98,7 +98,7 @@ get_senlinplot_stats = function(par_path = "parfile_path.par",
   par = process_parfile(par_path = par_path)
   
   gwas_paths = as.list(par[["gwasfile"]])
-  gwas_stats = map(gwas_paths, get_marker_stats) %>%
+  gwas_stats = map(gwas_paths, get_marker_stats, snp_name = gwas_snp_name) %>%
     reduce(rbind.data.frame)
   
   cat(paste0("Combining GWAS Summary and Meta Analysis Statistics...\n"))

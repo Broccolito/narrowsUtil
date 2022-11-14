@@ -90,6 +90,7 @@ get_marker_stats = function(gwas_path, snp_name = "6:160985526:G:A"){
     mutate(study = gwas_path) %>%
     select(study, everything())
   
+  rm(d)
   return(d_snp)
 }
 
@@ -154,7 +155,7 @@ get_senlinplot_stats = function(par_path = "parfile_path.par",
   
   gwas_paths = as.list(par[["gwasfile"]])
   outfile_path = par[["outfile"]]
-  gwas_stats = map(gwas_paths, get_marker_stats) %>%
+  gwas_stats = map(gwas_paths, get_marker_stats, snp_name = gwas_snp_name) %>%
     reduce(rbind.data.frame)
   meta_stats = get_meta_stats(outfile_path, snp_name = gwas_snp_name)
   
