@@ -180,7 +180,7 @@ For the second column: it should have user specified study names matched to the 
 | ~/ACCORD_Omni_EA/CHD/ACCORD_Omni_EA_CHD_chr_merged_with_chrX.txt | ACCORD Omni EUR CAD |
 | ~/WHI_LLS_EA_CHD_New_SAIGE_merged_auto_with_chrX.txt | WHI LLS EUR CAD|
 
-
+![make_senlin_plot_testfix_test18_forestplot](https://user-images.githubusercontent.com/97704603/218339115-a7231206-fa6c-448b-bffa-d60f96903f34.png)
 
 
 
