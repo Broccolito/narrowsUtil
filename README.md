@@ -150,6 +150,43 @@ Rscript /salemlab/users/wagu/narrowsUtil/make_crosstrait_senlin_plot_from_stats.
 ![newCross](https://user-images.githubusercontent.com/97704603/200648697-f09a0f06-a5ca-432c-aacd-4d6b92cc5796.png)
 
 
+#### Make forest plots with RENAME option in one command
+
+```bash
+# Arguments
+Rscript /salemlab/users/m1ma/forestPlot/make_senlin_plot_testcombine.R \
+	[Args1 METAL Parameter File] \
+	[Args2 Meta Analysis Result] \
+	[Args3 Rename CSV File] \
+	[Args4 SNPID] \
+	[Args5 plot and stats name suffix]
+
+# Example
+Rscript make_senlin_plot_testcombine.R \
+/salemlab/dbGaP/users/e6richar/jupyter/GWAS_FILES/CHD/EA/CHD_SUMSTAT_EA_META_X.par \ 
+/salemlab/dbGaP/users/e6richar/jupyter/GWAS_FILES/CHD/EA/CHD_EA_SUMSTAT_META_011122_study2_META1.txt \
+renametest.csv \
+1:64006922:A:G \
+1:64006922:A:G_EA_SUMSTAT
+
+# Rename CSV File Example
+For the first column: it should have full study file paths same as the paths of the individual studies in the metal parameter file.
+
+For the second column: it should have user specified study names matched to the paths in the first column.
+```
+| Original Study Paths | New Study Names specified by users |
+| --- | --- |
+| ~/ACCORD_Axiom_EA/CHD/ACCORD_Axiom_EA_CHD_chr_merged_with_chrX.txt | ACCORD Axiom EUR CAD |
+| ~/ACCORD_Omni_EA/CHD/ACCORD_Omni_EA_CHD_chr_merged_with_chrX.txt | ACCORD Omni EUR CAD |
+| ~/WHI_LLS_EA_CHD_New_SAIGE_merged_auto_with_chrX.txt | WHI LLS EUR CAD|
+
+
+
+
+
+
+
+
 
 
 ### Specifying Cluster Parameter
